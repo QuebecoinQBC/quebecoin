@@ -145,6 +145,7 @@ public:
         // release ASAP to avoid it where possible.
         //vSeeds.emplace_back("seed1.quebecoin..ca");
         //vSeeds.emplace_back("seed2.quebecoin..ca");
+        vSeeds.emplace_back("qbcdnsseed.beyondcoin.io"); // Kristian Kramer (Tech1k)
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,58);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
