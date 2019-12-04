@@ -146,6 +146,8 @@ public:
         //vSeeds.emplace_back("seed1.quebecoin..ca");
         //vSeeds.emplace_back("seed2.quebecoin..ca");
         vSeeds.emplace_back("qbcdnsseed.beyondcoin.io"); // Kristian Kramer (Tech1k)
+        vSeeds.emplace_back("66.42.87.99:10889");
+        vSeeds.emplace_back("54.39.201.117:10889");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,58);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
