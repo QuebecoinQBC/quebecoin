@@ -1,9 +1,6 @@
 sudo: required
 dist: trusty
 os: linux
-branches:
-  only:
-    - master
 language: minimal
 cache:
   directories:
@@ -74,15 +71,9 @@ after_script:
     - echo $TRAVIS_COMMIT_RANGE
     - echo $TRAVIS_COMMIT_LOG
 before_deploy: cd ${OUTDIR}/../ && tar -zcvf quebecoin-$HOST.tar.gz ${OUTDIR}
-- export TRAVIS_TAG="1.0.$TRAVIS_BUILD_NUMBER"
-- echo "$TRAVIS_TAG" "$TRAVIS_COMMIT"
-- git tag "$TRAVIS_TAG" "$TRAVIS_COMMIT"
 deploy:
   skip_cleanup: true
   provider: releases
-  tag_name: $TRAVIS_TAG
-  target_commitish: $TRAVIS_COMMIT
-  name: $TRAVIS_TAG
   api_key:
     secure: 'w82//NtWCx1ZZZu5giyIQVbWYg3V15feEfHsu/QRnZ48joo1eDVkCPZhqAXCMQry8riCgF2M473fy5zcIDwu1tZPL4ErFsWqwzGfj/XB5iqdK6FlvCcmjD7026OA+zmXlKYiDK6aYyNGjqaVcdmSNlKk+PaNEnFEvZ8jvE6u84KUihWEcLd8vmzd/x6Lg8jux++dByar7NlozgevjqxkMUafd2G92tqWPajGpUNwbDdUso/PgWwiWs+upY1powZ5ikImmPYvIYsCQgHer9rSMbYZ1jzgS2gYiW4Lx1lxRmBnWF1zLL2VckPDOUCGkA7kL5rVwNe18bC512v7Z/6nVEkIFbCIxFJL6Kj3MDhVb2R2lXORxKQAGHWZc2NudjILHa3Kob1X+sXizmODADeFJjygUEhV/Y/0UyKIzieQ1je95yhnHSrwNOpYzaqAqu0hfBwQj4+xuIlKSHCnCscwCGjn1P4Mw9H48G+cJ3N2IXy5xJlV9F4MCTsVQGAZwDFIIst7OQP/SqAMXnO9fKMXifdTbbZm8T19A0wHeFk9lZnSIduFOaTV00UlVMFp9WiUA03mD9XjfGel3tA3uwHhXqq4siqr5QQcCO0n1+/xJQ3TQdv67b6Cb+oGPdTrJ6zOwrC00Dzvj5uMj5q72IpoR9v+RkIUjVcvH2929VhHv8Q=' 
   on:
