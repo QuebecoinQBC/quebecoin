@@ -72,11 +72,8 @@ after_script:
     - echo $TRAVIS_COMMIT_LOG
 before_deploy: cd ${OUTDIR}/../ && tar -zcvf quebecoin-$HOST.tar.gz ${OUTDIR}
 deploy:
-  skip_cleanup: false
+  skip_cleanup: true
   provider: releases
-  api_key: "9efee2af8bc0cccb4f393c6bcc3944cae292302d"
-    secure: 
-  file: ${OUTDIR}/../quebecoin-$HOST.tar.gz
-  on:
+  api_key:
+    secure: '3emUu/ka5ATFU5kQVwwxBmEQWODdvr1yQTrkofFjfXKYTQcgn9YcTlvEKv4h10GaOQjiVnr+O+tEBwugma7KGzAlydwSEzcLyRC8zB6jCO6DsGE416cjA1XbTHLOKFR+R2QImi+HVUtBHYNzhMvUr+vx5og05OEKRjDsZOjDwlpg31JGtPrhyvUB9FSnHS35/2+w9Hsz6JjsvYS+aGpsSg8pMeid4+bpjvEsQBFnd+T1YvrSF1RjEuOA8aOkSO8c5oILtzI6uetoWgX7DVTxaRRmN16W5ZFn+QAG1bMYcIkuhgfOKaFqSK9qWkDRf7RxHzLbJtL0gIeiKmByjM2t/i9w/LYXMDFvV9v9UG5EqaKMogrpAieTVvY3/7gCMo92XcTHO2ZkBJERjWghnqv7Kva0neBY7h9bxOtSjYxt/z2pPGO3oUzHZUYMOAVfxW2Cfiq/1kk2zYJl23D0TuCTxNha+XnkJaiDhcmzeztUqGJmfNJBvIEdrsEBWtGa58ik2S1WmgU56nGihMDujFd1M5YF62xg9anzTPBpNcO+lPmWSFd2tTEbsCFsrOZPULVGT4AHtObo/pJ+E7SolhpODGHJb/eMGt04xZqDTkNkoIQoXewKGVK8B1z7ouKtkuRMHe2LbFeCbqOtAV4MaFJKrAn6YR0Hoj9B/ZXb4c6E1Jw='
     repo: QuebecoinQBC/quebecoin
-
