@@ -17,6 +17,7 @@
 #include <qt/platformstyle.h>
 #include <qt/rpcconsole.h>
 #include <qt/utilitydialog.h>
+#include <qt/navigationbar.h>
 
 #ifdef ENABLE_WALLET
 #include <qt/walletframe.h>
@@ -52,6 +53,8 @@
 #include <QTimer>
 #include <QToolBar>
 #include <QVBoxLayout>
+#include <QDockWidget>
+#include <QSizeGrip>
 
 #if QT_VERSION < 0x050000
 #include <QTextDocument>
@@ -454,18 +457,37 @@ void BitcoinGUI::createToolBars()
 {
     if(walletFrame)
     {
-        QToolBar *toolbar = addToolBar(tr("Tabs toolbar"));
-        toolbar->setContextMenuPolicy(Qt::PreventContextMenu);
-        toolbar->setMovable(false);
-        toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        toolbar->addAction(overviewAction);
-        toolbar->addAction(sendCoinsAction);
-        toolbar->addAction(receiveCoinsAction);
-        toolbar->addAction(historyAction);
+        // QToolBar *toolbar = addToolBar(tr("Tabs toolbar"));
+        // toolbar->setContextMenuPolicy(Qt::PreventContextMenu);
+        // toolbar->setMovable(false);
+        // toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        // toolbar->addAction(overviewAction);
+        // toolbar->addAction(sendCoinsAction);
+        // toolbar->addAction(receiveCoinsAction);
+        // toolbar->addAction(historyAction);
+        	        // Create custom tool bar component
+        appNavigationBar = new NavigationBar();
+        addDockWindows(Qt::LeftDockWidgetArea, appNavigationBar);
+		        // Fill the component with actions
+        appNavigationBar->addAction(overviewAction);
+        appNavigationBar->addAction(sendCoinsAction);
+        appNavigationBar->addAction(receiveCoinsAction);
+        appNavigationBar->addAction(historyAction);
+        appNavigationBar->buildUi();
         overviewAction->setChecked(true);
     }
 }
-
+void BitcoinGUI::addDockWindows(Qt::DockWidgetArea area, QWidget* widget)
+{
+    QDockWidget *dock = new QDockWidget(this);
+    dock->setFeatures(QDockWidget::NoDockWidgetFeatures);
+    dock->setAllowedAreas(area);
+    QWidget* titleBar = new QWidget();
+    titleBar->setMaximumSize(0, 0);
+    dock->setTitleBarWidget(titleBar);
+    dock->setWidget(widget);
+    addDockWidget(area, dock);
+}
 void BitcoinGUI::setClientModel(ClientModel *_clientModel)
 {
     this->clientModel = _clientModel;
