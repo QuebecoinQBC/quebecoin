@@ -97,7 +97,7 @@ PlatformStyle::PlatformStyle(const QString &_name, bool _imagesOnButtons, bool _
         singleColor = GetStringStyleValue("platformstyle/single-color", "#008ac8");
     }
     // Determine text color
-    textColor = GetStringStyleValue("platformstyle/text-color", "#e6f0f0");
+    textColor = GetStringStyleValue("platformstyle/text-color", "#ffffff");
     menuColor = GetColorStyleValue("platformstyle/menu-color", QColor(QApplication::palette().color(QPalette::WindowText)));
 
     // Determine table color
