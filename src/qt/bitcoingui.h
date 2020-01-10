@@ -30,6 +30,8 @@ class WalletFrame;
 class WalletModel;
 class HelpMessageDialog;
 class ModalOverlay;
+class NavigationBar;
+class QDockWidget;
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -90,6 +92,7 @@ private:
     QProgressDialog *progressDialog;
 
     QMenuBar *appMenuBar;
+    NavigationBar *appNavigationBar = nullptr;
     QAction *overviewAction;
     QAction *historyAction;
     QAction *quitAction;
@@ -135,6 +138,7 @@ private:
     void createTrayIcon(const NetworkStyle *networkStyle);
     /** Create system tray menu (or setup the dock menu) */
     void createTrayIconMenu();
+    void addDockWindows(Qt::DockWidgetArea area, QWidget* widget);
 
     /** Enable or disable all wallet-related actions */
     void setWalletActionsEnabled(bool enabled);
