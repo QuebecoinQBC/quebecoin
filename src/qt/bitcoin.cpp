@@ -20,7 +20,6 @@
 #include <qt/splashscreen.h>
 #include <qt/utilitydialog.h>
 #include <qt/winshutdownmonitor.h>
-#include <qt/styleSheet.h>
 
 #ifdef ENABLE_WALLET
 #include <qt/paymentserver.h>
@@ -387,6 +386,7 @@ void BitcoinApplication::createOptionsModel(bool resetSettings)
 void BitcoinApplication::createWindow(const NetworkStyle *networkStyle)
 {
     window = new BitcoinGUI(platformStyle, networkStyle, 0);
+
     pollShutdownTimer = new QTimer(window);
     connect(pollShutdownTimer, SIGNAL(timeout()), window, SLOT(detectShutdown()));
 }
@@ -583,7 +583,6 @@ int main(int argc, char *argv[])
 
     // Register meta types used for QMetaObject::invokeMethod
     qRegisterMetaType< bool* >();
-
     //   Need to pass name here as CAmount is a typedef (see http://qt-project.org/doc/qt-5/qmetatype.html#qRegisterMetaType)
     //   IMPORTANT if it is no longer a typedef use the normal variant above
     qRegisterMetaType< CAmount >("CAmount");
@@ -700,8 +699,7 @@ int main(int argc, char *argv[])
 
     int rv = EXIT_SUCCESS;
     try
-    {    
-        SetObjectStyleSheet(&app, StyleSheetNames::App);
+    {
         app.createWindow(networkStyle.data());
         // Perform base initialization before spinning up initialization/shutdown thread
         // This is acceptable because this function only contains steps that are quick to execute,
