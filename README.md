@@ -18,20 +18,20 @@ For more information, as well as an immediately usable, binary version of
 the Quebecoin Core software, see http://www.quebecoin.ca, or read the
 [original Bitcoin whitepaper](https://bitcoincore.org/bitcoin.pdf).
 
-Quebecoin is distinct from Bitcoin in that it pioneered the use of multiple independent 
+Quebecoin is distinct from Bitcoin in that it pioneered the use of multiple independent
 PoW algorithms on the same chain.
 
 License
 -------
 
-Quebecoin is a fork of Bitcoin Core and inherits the terms of the MIT license. See 
+Quebecoin is a fork of Bitcoin Core and inherits the terms of the MIT license. See
 [COPYING](COPYING) for more information or see https://opensource.org/licenses/MIT.
 
 Development Process
 -------------------
 
 The `master` branch is occasionally built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/myriadteam/quebecoin/tags) are created
+completely stable. [Tags](https://github.com/QuebecoinQBC/quebecoin/tags) are created
 regularly to indicate new official, stable release versions of Quebecoin Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).

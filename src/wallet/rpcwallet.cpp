@@ -2495,7 +2495,7 @@ UniValue encryptwallet(const JSONRPCRequest& request)
             "\nExamples:\n"
             "\nEncrypt your wallet\n"
             + HelpExampleCli("encryptwallet", "\"my pass phrase\"") +
-            "\nNow set the passphrase to use the wallet, such as for signing or sending myriad\n"
+            "\nNow set the passphrase to use the wallet, such as for signing or sending quebecoin\n"
             + HelpExampleCli("walletpassphrase", "\"my pass phrase\"") +
             "\nNow we can do something like sign\n"
             + HelpExampleCli("signmessage", "\"address\" \"test message\"") +

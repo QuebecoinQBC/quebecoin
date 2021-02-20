@@ -1,4 +1,4 @@
-Contributing to Myriad
+Contributing to Quebecoin
 ============================
 
 Quebecoin operates an open contributor model where anyone is
@@ -82,7 +82,7 @@ Examples:
     Trivial: Fix typo in init.cpp
 
 Note that translations should not be submitted as pull requests, please see
-[Translation Process](https://github.com/bitcoin/bitcoin/blob/master/doc/translation_process.md) 
+[Translation Process](https://github.com/bitcoin/bitcoin/blob/master/doc/translation_process.md)
 for more information on helping with translations.
 
 If a pull request is not to be considered for merging (yet), please
@@ -170,8 +170,7 @@ workload on reviewing.
 -------------------------
 
 The following applies to code changes to the Quebecoin project (and related
-projects such as libsecp256k1), and is not to be confused with overall Myriad
-Network Protocol consensus changes.
+Quebecoin Network Protocol consensus changes.
 
 Whether a pull request is merged into Quebecoin rests with the project merge
 maintainers and ultimately the project lead.
@@ -277,7 +276,7 @@ The project leader is the release manager for each Quebecoin release.
 Copyright
 ---------
 
-By contributing to this repository, you agree to license your work under the 
-MIT license unless specified otherwise in `contrib/debian/copyright` or at 
-the top of the file itself. Any work contributed where you are not the original 
+By contributing to this repository, you agree to license your work under the
+MIT license unless specified otherwise in `contrib/debian/copyright` or at
+the top of the file itself. Any work contributed where you are not the original
 author must contain its license header with the original author(s) and source.
