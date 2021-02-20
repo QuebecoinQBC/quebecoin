@@ -13,4 +13,4 @@ Deployment of this rule is through version bit 6.
 
 Reference implementation
 
-https://github.com/myriadteam/quebecoin/pull/132
+https://github.com/QuebecoinQBC/quebecoin/pull/132
